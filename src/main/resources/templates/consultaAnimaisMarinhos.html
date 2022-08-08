@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Consulta</h1>
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Especie</th>
+					<th>Habitat</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="animaisMarinhos: ${animaisMarinhos}">
+					<td th:text="*{animaisMarinhos.id}" />
+					<td th:text="*{animaisMarinhos.nome}" />
+					<td th:text="*{animaisMarinhos.fone}" />
+					<td th:text="*{animaisMarinhos.email}" />
+					<td> 
+					<a th:href="@{'/consultaAnimaisMarinhos/'+${animaisMarinhos.id}}">editar</a>
+					<a th:href="@{'/deleteAnimaisMarinhos/'+${animaisMarinhos.id}}">excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/cadastroAnimaisMarinhos}">Cadastro</a>
+	</div>
+</body>
+
+</html>

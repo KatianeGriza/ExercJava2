@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<div class="container">
+<body>
+	<h1>Edição de Animal Marinho</h1>
+	<form th:action="@{/cadastro}" method="post" th:object=${animal}>
+	<label>ID</label>
+	<input type="text" id="idnome" th:field="*{id}" readonly>
+	
+	<label for="idnome">Nome</label>
+	<input id="idnome" type="text" placeholder="Informe nome" th:field="*{nome}">
+	
+	<label for="idespecie">Especie</label>
+	<input ide="idespecie" type="text" placeholder="Informe especie" th:field="*{especie}">
+	
+	<label for="idhabitat">Habitat</label>
+	<input id="idhabitat"type="text" placeholder="Informe habitat" th:field="*{habitat}">
+	
+	<button class="btn waves-effect">Salvar</button>
+	</form>
+	</div>
+</body>
+
+</html>
