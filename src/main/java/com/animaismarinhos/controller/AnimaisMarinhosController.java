@@ -23,19 +23,19 @@ public class AnimaisMarinhosController {
 		return "indexAnimaisMarinhos";
 	}
 	@GetMapping("/cadastroAnimaisMarinhos")
-	public String formCadastro() {
+	public String formCadastroAnimaisMarinhos() {
 		return "cadastroAnimaisMarinhos";
 	}
 	@GetMapping("/consultaAnimaisMarinhos")
-	public String formConsulta(Model model) {
+	public String formConsultaAnimaisMarinhos(Model model) {
 		Iterable<AnimaisMarinhos> animaisMarinhos = repo.findAll();
 		model.addAttribute("animaisMarinhos", animaisMarinhos);
 		return "consultaAnimaisMarinhos";
 	}
-	@GetMapping("/consultaAnimaisMarinhos/{idanimaismarinhos}")
-	public String formEditar(@PathVariable("idanimaismarinhos") int id, Model model) {
-		AnimaisMarinhos animaismarinhos = repo.findById(id).get();
-		model.addAttribute("animaismarinhos", animaismarinhos);
+	@GetMapping("/consultaAnimaisMarinhos/{idanimaisMarinhos}")
+	public String formEditarAnimaisMarinhos(@PathVariable("idanimaisMarinhos") int id, Model model) {
+		AnimaisMarinhos animaisMarinhos = repo.findById(id).get();
+		model.addAttribute("animaisMarinhos", animaisMarinhos);
 		return "edicaoAnimaisMarinhos";
 	}
 	
@@ -44,8 +44,8 @@ public class AnimaisMarinhosController {
 		repo.save(animaisMarinhos);
 	return "redirect:/consultaAnimaisMarinhos";
 	}
-	@GetMapping("/delete/{idanimaismarinhos}")
-	public String delete(@PathVariable("idanimaismarinhos") int id) {
+	@GetMapping("/deleteAnimaisMarinhos/{idanimaisMarinhos}")
+	public String delete(@PathVariable("idanimaisMarinhos") int id) {
 		repo.deleteById(id);
 		return "redirect:/consultaAnimaisMarinhos";
 	}

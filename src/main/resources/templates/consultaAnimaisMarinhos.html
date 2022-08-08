@@ -23,8 +23,8 @@
 				<tr th:each="animaisMarinhos: ${animaisMarinhos}">
 					<td th:text="*{animaisMarinhos.id}" />
 					<td th:text="*{animaisMarinhos.nome}" />
-					<td th:text="*{animaisMarinhos.fone}" />
-					<td th:text="*{animaisMarinhos.email}" />
+					<td th:text="*{animaisMarinhos.especie}" />
+					<td th:text="*{animaisMarinhos.habitat}" />
 					<td> 
 					<a th:href="@{'/consultaAnimaisMarinhos/'+${animaisMarinhos.id}}">editar</a>
 					<a th:href="@{'/deleteAnimaisMarinhos/'+${animaisMarinhos.id}}">excluir</a>
