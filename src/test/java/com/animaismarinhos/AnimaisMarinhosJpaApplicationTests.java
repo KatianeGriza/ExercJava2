@@ -10,7 +10,7 @@ class AnimaisMarinhosJpaApplicationTests {
 
 	@Test
 	void contextLoads() {
-		assertEquals(2, 2);
+		assertEquals(2, 1);
 	}
 
 }
